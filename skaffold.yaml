@@ -1,0 +1,21 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+metadata:
+  name: ticketing
+build:
+  local:
+    push: false
+  artifacts:
+    - image: matheusmantini/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+deploy:
+  kubeContext: minikube
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
