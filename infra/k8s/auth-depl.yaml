@@ -16,11 +16,8 @@ spec:
         - name: auth
           image: matheusmantini/auth
           env:
-            - name: JWT_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: jwt-secret
-                  key: JWT_KEY
+          - name: JWT_KEY
+            value: "asdf"
 ---
 apiVersion: v1
 kind: Service
