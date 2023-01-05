@@ -22,6 +22,14 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
+    - image: matheusmantini/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
 deploy:
   kubeContext: minikube
   kubectl:
