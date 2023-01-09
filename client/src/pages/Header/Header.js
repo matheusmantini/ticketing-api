@@ -24,7 +24,7 @@ const HeaderPage = () => {
     <div>
       <nav className="navbar navbar-dark bg-primary">
         <form className="form-inline">
-          {currentUser.length === 0 && (
+          {currentUser.currentUser === null && (
             <>
               <ContainerButton>
                 <button
@@ -51,7 +51,7 @@ const HeaderPage = () => {
             </>
           )}
 
-          {currentUser.length !== 0 && (
+          {currentUser.currentUser !== null && (
             <ContainerButton>
               <button
                 className="btn btn-danger"
